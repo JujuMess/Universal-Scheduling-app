@@ -1,5 +1,5 @@
 import pandas as pd
-from app import scheduling_app
+from app import universal_scheduling_app
 def test_load_employee_list(excel):
 
     df_team, name_map = scheduling_app.load_employee_list(excel)
