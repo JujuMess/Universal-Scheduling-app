@@ -1,4 +1,9 @@
-def check_df_created(df):
+import pandas as pd
+from app import scheduling_app
+def test_load_employee_list(excel):
 
-    assert df isinstance(df, pd.DataFrame)
-    print(df.columns)
+    df_team, name_map = scheduling_app.load_employee_list(excel)
+    assert isinstance(df_team, pd.DataFrame)
+
+    for name in df_team["norm_name"].values:
+        assert name.islower()
