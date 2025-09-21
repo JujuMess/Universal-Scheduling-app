@@ -7,9 +7,10 @@ def normalise(text):
     print(f"initialising normalise for {text}")
     try: 
         isinstance(text, str)
-        text.strip().lower().replace(" ", "_").replace("-", "_")
+        text = text.strip().lower().replace(" ", "_").replace("-", "_")
         print(text)
         return text
-    except AttributeErrror:
+    except AttributeError:
         print()
         return text
+    
