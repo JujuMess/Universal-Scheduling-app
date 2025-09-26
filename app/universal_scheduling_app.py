@@ -1,12 +1,14 @@
 import openpyxl
 import pandas as pd
 import calendar
+import re
 
 #normalise to be used in all functions
 def normalise(text):
     print(f"initialising normalise for {text}")
     try: 
         text = str(text).strip().lower().replace(" ", "_").replace("-", "_")
+        text = re.sub(r"\s+", "_", text) 
         print(text)
         return text
     except AttributeError:
@@ -24,13 +26,10 @@ def import_sheet(file_path, sheet_name):
         if "agent_name" in df.columns:
             df = df.dropna(subset=["agent_name"])
             df["agent_name"] = df["agent_name"].astype(str).apply(normalise)
-
+        print("sheet import over")
         return df
     except Exception as e:
-        print(f"effor {e} during importing sheet.")
-        return None
-
-
+        raise RuntimeError(f"error {e} during importing sheet.")
 
 
 
@@ -39,6 +38,20 @@ def import_sheet(file_path, sheet_name):
 
 
 #create load_employee_list() function
+
+def load_employee_list(file_path, team_tab):
+    try:
+        print("loading employee list initialised")
+        df_team = import_sheet(file_path, team_tab)
+        df_team = df_team.fillna("empty")
+
+        print("df_team loaded")
+        return df_team
+    except Exception as e:
+        raise RuntimeError(f"error {e} loading employee list.")
+
+
+
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
 #create load_holiday_calendar() function
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
