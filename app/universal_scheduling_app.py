@@ -5,16 +5,23 @@ import re
 
 #normalise to be used in all functions
 def normalise(text):
-    print(f"initialising normalise for {text}")
-    try: 
+
+    if isinstance(text, str):
         text = str(text).strip().lower().replace(" ", "_").replace("-", "_")
         text = re.sub(r"\s+", "_", text) 
         print(text)
         return text
-    except AttributeError:
-        print(f"Error normalising {text}, not a string!")
-        text = str(text)
-        return text
+    elif isinstance(text, list):
+        return [normalise(t) for t in text]
+
+    elif isinstance(text, pd.Series):
+        return text.apply(normalise)
+
+    elif isinstance(obj, pd.Index):
+        return pd.Index([normalise(c) for c in obj], name=obj.name)
+    
+    else:
+        return normalise(str(obj))
     
 # create import_sheet() function
     # should be pandas to load the workbook based on the sheet entered as the function argument
@@ -30,12 +37,6 @@ def import_sheet(file_path, sheet_name):
         return df
     except Exception as e:
         raise RuntimeError(f"error {e} during importing sheet.")
-
-
-
-
-
-
 
 #create load_employee_list() function
 
