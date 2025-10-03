@@ -5,3 +5,6 @@ __pycache__/
 uploads/
 .env
 .vscode/
+schedule_venv
+venv/
+.venv

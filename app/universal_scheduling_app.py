@@ -17,11 +17,11 @@ def normalise(text):
     elif isinstance(text, pd.Series):
         return text.apply(normalise)
 
-    elif isinstance(obj, pd.Index):
-        return pd.Index([normalise(c) for c in obj], name=obj.name)
+    elif isinstance(text, pd.Index):
+        return pd.Index([normalise(c) for c in text], name=text.name)
     
     else:
-        return normalise(str(obj))
+        return normalise(str(text))
     
 # create import_sheet() function
     # should be pandas to load the workbook based on the sheet entered as the function argument
