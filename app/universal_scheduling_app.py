@@ -2,6 +2,7 @@ import openpyxl
 import pandas as pd
 import calendar
 import re
+                                            #### daram import functions ####
 
 #normalise to be used in all functions
 def normalise(text):
@@ -51,14 +52,58 @@ def load_employee_list(file_path, team_tab):
     except Exception as e:
         raise RuntimeError(f"error {e} loading employee list.")
 
+def load_holiday_calendar():
+    pass
 
-
+#create load_holiday_calendar() function TEST CREATED
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
-#create load_holiday_calendar() function
+#create load_shift_requirements() function TEST CREATED
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
-#create load_shift_requirements() function
-    # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
-#create load_history_file() function
+#create load_history_file() function TEST CREATED
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
 #create check_name_list() function
-    #check all names in all dfs are mathing
+#check all names in all dfs are mathing
+
+# create a function that turns the holiday df to long format
+
+#create the schedule structure
+
+#merge team df and schedule structure
+
+#TEST TO SEE IF ALL NAMES MATCH
+
+
+                                            #### utilities functions ####
+# extract teams off dfs into a list
+#create masks for dfs for each skill
+
+#pick random staff function
+
+#select fairest function
+#assign_one_agent function
+
+#update history function
+
+                                            #### LOGIC ASSIGNMENT ####
+#assign days of annual leave
+#assign default shift function
+
+#assign shift function : should work for all shifts, build a team that natches all requirements
+
+#checker fuctions checking all shift requirements are met (number and skills met)
+#checker function checking the agents don't get the same shift all the time
+#assign days off
+
+#wrapper function applying the logic weekly
+
+                                            #### OUTPUT SCHEDULE ####
+#building empty schedule function
+#building the empty history tab function if needed
+#filling the schedule function
+#updating history tab function (must have an "updated on" box)
+
+#function to check if missing names between previous month and new schedule
+#function to check if missing names between history tab and new schedule
+
+#function to update yram in history tab 
+
