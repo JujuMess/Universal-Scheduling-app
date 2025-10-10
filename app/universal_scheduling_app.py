@@ -49,6 +49,7 @@ def load_employee_list(file_path, team_tab):
 
         print("df_team loaded")
         return df_team
+    
     except Exception as e:
         raise RuntimeError(f"error {e} loading employee list.")
 
@@ -56,12 +57,20 @@ def load_holiday_calendar():
     pass
 
 #create load_holiday_calendar() function TEST CREATED
+def load_holiday_calendar():
+    pass
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
 #create load_shift_requirements() function TEST CREATED
+def load_shift_requirements():
+    pass
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
 #create load_history_file() function TEST CREATED
+def load_history_file():
+    pass
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
-#create check_name_list() function
+#create check_mismatch() function CURRENTLY CREATING TEST
+def check_mismatch():
+    pass
 #check all names in all dfs are mathing
 
 # create a function that turns the holiday df to long format
