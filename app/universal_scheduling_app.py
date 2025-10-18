@@ -71,7 +71,9 @@ def load_history_file():
 #create check_mismatch() function CURRENTLY CREATING TEST
 def check_mismatch():
     pass
-#check all names in all dfs are mathing
+#check all names in all dfs are matching return two string, one saying the missing names in df_team and where to find it, and other saying the missing dta compared to df_team and where it's missing
+# takes all dfs as arguments
+
 
 # create a function that turns the holiday df to long format
 
