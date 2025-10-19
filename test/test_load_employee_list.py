@@ -12,7 +12,7 @@ def test_normalised():
         for n in name:
             assert n not in [" ", "-"]
             if n.isalpha():
-                assert name.islower() f'{name} not normalised'
+                assert name.islower(), f"{name} not normalised"
 
 def test_no_empty_names():
     df_team = load_employee_list("test/test_file.xlsx","team")
