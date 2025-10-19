@@ -53,23 +53,21 @@ def load_employee_list(file_path, team_tab):
     except Exception as e:
         raise RuntimeError(f"error {e} loading employee list.")
 
-def load_holiday_calendar():
-    pass
 
 #create load_holiday_calendar() function TEST CREATED
-def load_holiday_calendar():
+def load_holiday_calendar(file_path):
     pass
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
 #create load_shift_requirements() function TEST CREATED
-def load_shift_requirements():
+def load_shift_requirements(file_path):
     pass
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
 #create load_history_file() function TEST CREATED
-def load_history_file():
+def load_history_file(file_path):
     pass
     # create a pandas dataframe from the sheet with a column for each one in the sheet, all names normalised
 #create check_mismatch() function CURRENTLY CREATING TEST
-def check_mismatch():
+def check_mismatch(df_team, df_history, df_holiday, df_schedule):
     pass
 #check all names in all dfs are matching return two string, one saying the missing names in df_team and where to find it, and other saying the missing dta compared to df_team and where it's missing
 # takes all dfs as arguments

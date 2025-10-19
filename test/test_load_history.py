@@ -1,4 +1,4 @@
-from app.universal_scheduling_app import load_history
+from app.universal_scheduling_app import load_history_file
 import pandas as pd
 import datetime
 
